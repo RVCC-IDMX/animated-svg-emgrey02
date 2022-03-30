@@ -61,11 +61,11 @@ body {
 
 @keyframes gyrate {
     from {
-        transform: rotateZ(5deg);
+        transform: rotateZ(5deg) rotateX(-10deg);
     }
 
     to {
-        transform: rotateZ(-5deg);
+        transform: rotateZ(-5deg) rotateX(10deg);
     }
 }
 
@@ -90,5 +90,11 @@ body {
 @keyframes kick {
     to {
         transform: rotateZ(-60deg) translateX(-25px) translateY(20px);
+    }
+}
+
+@media (prefers-reduced-motion) {
+    #bottom-leg, #left-arm, #right-arm, #torso {
+        animation: paused;
     }
 }
