@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #E5E5E5;
+    text-align: center;
+}
+
+#right-arm {
+    transform-origin: left;
+    transform-box: fill-box;
+    animation: wave 600ms linear infinite alternate;
+}
+
+#left-arm {
+    transform-origin: right;
+    transform-box: fill-box;
+    animation: move 600ms linear infinite alternate;
+}
+
+#torso {
+    transform-origin: center;
+    transform-box: fill-box;
+    animation: gyrate 600ms ease-in infinite alternate;
+}
+
+#head {
+    transform-origin: center;
+    transform-box: fill-box;
+    animation: bob 600ms ease infinite alternate;
+}
+
+#bottom-leg {
+    transform-origin: top;
+    transform-box: fill-box;
+    animation: kick 600ms ease infinite alternate;
+}
+
+@keyframes wave {
+    from {
+        transform: rotateZ(-20deg);
+    }
+
+    to {
+        transform: rotateZ(40deg);
+    }
+}
+
+@keyframes move {
+    from {
+        transform: rotateZ(-10deg) translateY(30px);
+    }
+
+    to {
+        transform: rotateZ(40deg) translateX(-20px) translateY(20px);
+    }
+}
+
+@keyframes gyrate {
+    from {
+        transform: rotateZ(5deg);
+    }
+
+    to {
+        transform: rotateZ(-5deg);
+    }
+}
+
+@keyframes bob {
+    0% {
+        transform: translateY(2px);
+    }
+
+    50% {
+        transform: translateY(-2px);
+    }
+
+    75% {
+        transform: translateY(2px);
+    }
+
+    100% {
+        transform: translateY(-2px);
+    }
+}
+
+@keyframes kick {
+    to {
+        transform: rotateZ(-60deg) translateX(-25px) translateY(20px);
+    }
+}
